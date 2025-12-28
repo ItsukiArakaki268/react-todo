@@ -4,8 +4,12 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemButton,
+  ListItemText,
   TextField,
 } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { CheckBox } from "@mui/icons-material";
 
 function App() {
   return (
@@ -29,9 +33,20 @@ function App() {
           />
           <Button variant="contained">追加</Button>
         </Box>
-        <List>
-          <ListItem>
-            あ<IconButton>あ</IconButton>
+        <List sx={{ backgroundColor: "white", borderRadius: 1 }}>
+          <ListItem
+            secondaryAction={
+              <IconButton edge="end" color="error">
+                <DeleteIcon />
+              </IconButton>
+            }
+            disablePadding
+            divider
+          >
+            <ListItemButton>
+              <CheckBox />
+              <ListItemText primary="TODOアイテム1" />
+            </ListItemButton>
           </ListItem>
         </List>
       </Box>
